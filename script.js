@@ -222,14 +222,14 @@ function buildIntro(){
     stage.style.transform = `translateY(${progress*-120}px)`;
     stage.style.opacity = String(1 - progress*0.2);
   }, { passive:true });
-  btn.addEventListener('click', ()=>{
+  const start = ()=>{
     overlay.classList.add('slide');
     setTimeout(()=> overlay.remove(), 650);
     document.documentElement.classList.remove('no-scroll');
     document.body.classList.remove('no-scroll');
-    // keep intro visible to scroll through (~200vh)
-    // start music
     const audio=$('#audio'); const eq=document.querySelector('.cassette .eq'); const playBtn=$('#playBtn');
-    audio && audio.play().then(()=>{ eq && eq.classList.add('playing'); playBtn && (playBtn.textContent='⏸'); }).catch(()=>{});
-  });
+    if (audio) { audio.play().then(()=>{ eq && eq.classList.add('playing'); playBtn && (playBtn.textContent='⏸'); }).catch(()=>{}); }
+  };
+  btn.addEventListener('click', start);
+  window.startExperience = start;
 }
