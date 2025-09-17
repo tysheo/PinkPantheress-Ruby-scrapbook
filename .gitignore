@@ -1,0 +1,18 @@
+# Node
+node_modules/
+.vercel/
+.DS_Store
+Thumbs.db
+.env
+.env.*
+.idea/
+*.log
+
+# Builds
+dist/
+.out/
+.next/
+.vite/
+
+# Python server cache
+__pycache__/

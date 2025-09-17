@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Ruby x PinkPantheress — Love Zine</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Caveat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div id="startOverlay" class="start-overlay" aria-hidden="false">
+    <div class="start-inner">
+      <h2>Press Start</h2>
+      <p>Turn the volume up — then begin</p>
+      <button id="startBtn" class="play" aria-label="Start">Start ▶</button>
+    </div>
+  </div>
+  <section id="intro" class="intro" aria-label="Floating collage intro">
+    <div class="intro-stage" id="introStage"></div>
+  </section>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="title">
+        <h1 aria-label="Pink Pantheress x Ruby" class="cutout">
+          <span>P</span><span>i</span><span>n</span><span>k</span>
+          <span>P</span><span>a</span><span>n</span><span>t</span><span>h</span><span>e</span><span>r</span><span>e</span><span>s</span><span>s</span>
+          <span>x</span>
+          <span>R</span><span>u</span><span>b</span><span>y</span>
+        </h1>
+        <p class="sub">Happy <strong>16 months</strong>, Ruby — I love you forever 💖</p>
+      </div>
+
+      <!-- PLAYER -->
+      <div class="player-card">
+        <img src="assets/album_cover.png" alt="Album art" class="album"/>
+        <div class="cassette">
+          <button id="playBtn" class="play" aria-label="Play / Pause" onclick="togglePlay()">▶</button>
+          <div class="eq" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="time"><span id="time">00:00</span></div>
+          <audio id="audio" preload="auto">
+            <source src="assets/song/PinkPantheress - Nice To Know You (Official Lyric Video).mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✂️ COLLAGE STAGE -->
+    <section class="collage" aria-label="Collage builder">
+  <div class="stage-controls">
+        <button onclick="shufflePieces()">Shuffle</button>
+        <button onclick="toggleGrid()">Grid</button>
+        <button onclick="cycleBlend()">Blend</button>
+        <button onclick="cycleFilter()">Filter</button>
+        <button onclick="addRandomPieces(5)">Add 5</button>
+        <button onclick="toggleHalftone()">Halftone</button>
+        <button onclick="toggleTorn()">Torn Edge</button>
+        <button onclick="saveStage()">Save PNG</button>
+        
+        <span class="hint">Drag to move • Shift + Wheel to rotate • Alt + Wheel to scale • Double-click to bring to front.</span>
+      </div>
+      <div class="sticker-tray-wrap">
+        <h3 class="sticker-title">Stickers</h3>
+        <div id="stickerTray" class="sticker-tray" aria-label="Sticker tray"></div>
+      </div>
+      <div id="stage" class="stage" role="region" aria-label="Collage stage">
+        <img src="assets/label-hey.svg" class="stage-sticker" alt="" aria-hidden="true">
+        <img src="assets/star.svg" class="stage-sticker" alt="" aria-hidden="true">
+        <img src="assets/heart.svg" class="stage-sticker" alt="" aria-hidden="true">
+      </div>
+    </section>
+
+    <!-- SCRAPBOOK -->
+    <h2 class="scrapbook-title">Scrapbook</h2>
+    <section class="scrapbook" aria-label="Photo scrapbook">
+      <figure class="polaroid"><img src="assets/photos/IMG_4316.png" alt="Memory 1"><figcaption>Memory 1</figcaption></figure>
+      <figure class="polaroid"><img src="assets/photos/IMG_4336.png" alt="Memory 2"><figcaption>Memory 2</figcaption></figure>
+      <figure class="polaroid"><img src="assets/photos/IMG_9698.png" alt="Memory 3"><figcaption>Memory 3</figcaption></figure>
+      <figure class="polaroid"><img src="assets/photos/IMG_0167.png" alt="Memory 4"><figcaption>Memory 4</figcaption></figure>
+      <figure class="polaroid"><img src="assets/photos/IMG_9524(1).png" alt="Memory 5"><figcaption>Memory 5</figcaption></figure>
+      <figure class="polaroid"><img src="assets/photos/73884825806__3C13AC82-99C6-40DB-BA56-00B408AAE3A9.png" alt="Memory 6"><figcaption>Memory 6</figcaption></figure>
+      <figure class="polaroid"><img src="assets/photos/IMG_5001.png" alt="Memory 7"><figcaption>Memory 7</figcaption></figure>
+      <figure class="polaroid"><img src="assets/photos/P1020363.png" alt="Memory 8"><figcaption>Memory 8</figcaption></figure>
+    </section>
+
+    <!-- LOVE NOTE -->
+    <h2 class="love-note-title">Love note</h2>
+    <section class="note">
+      <div class="note-card" id="noteCard">
+        <p id="noteText"></p>
+      </div>
+      <div class="note-actions">
+        <button id="saveBtn" onclick="saveNote()">Save as PNG</button>
+      </div>
+    </section>
+
+    <section class="secret" id="secret" hidden>
+      <div class="secret-inner">
+        <h2>forever ♡</h2>
+        <canvas id="confetti" width="600" height="200" aria-hidden="true"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Made for Ruby by Ty · PinkPantheress forever ✷</small>
+    <div class="tiny-icons" aria-hidden="true">❤︎ ♪ ✷</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

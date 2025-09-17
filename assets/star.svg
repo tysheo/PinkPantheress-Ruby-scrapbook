@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+  <g filter="url(#f)">
+    <path d="M50 4 L61 35 L95 35 L67 54 L78 86 L50 68 L22 86 L33 54 L5 35 L39 35 Z" fill="#ffd74a"/>
+  </g>
+  <defs>
+    <filter id="f" x="0" y="0" width="100" height="100" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="rgba(0,0,0,0.35)"/>
+    </filter>
+  </defs>
+</svg>

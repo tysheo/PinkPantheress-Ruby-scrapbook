@@ -1,0 +1,12 @@
+{
+  "audio": { "src": "assets/song/PinkPantheress - Nice To Know You (Official Lyric Video).mp3", "cover": "assets/album_cover.png" },
+  "stickers": [
+    { "src": "assets/collage assets/heart.svg", "tags": ["heart"] },
+    { "src": "assets/collage assets/star.svg", "tags": ["star"] }
+  ],
+  "memories": [
+    { "src": "assets/photos/IMG_4316.png", "caption": "IMG 4316" }
+  ],
+  "textures": ["assets/backgrounds/paper backgroudn.jpg"],
+  "palette": ["#ff7aa2", "#ff4d84", "#1b1b1b", "#fff6ee", "#f7f2ee"]
+}
